@@ -9,9 +9,13 @@ const Cart = ({onCloseCart}) => {
 
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`
 
-    const cartItemRemoveHandler = id => {}
+    const cartItemRemoveHandler = id => {
+      cartCtx.removeItem(id)
+    }
 
-    const cartItemAddHandler = item => {}
+    const cartItemAddHandler = item => {
+      cartCtx.addItem({...item, amount: 1})
+    }
   return (
     <Modal onCloseCart={onCloseCart}>
         <ul className={styles['cart-items']}>
