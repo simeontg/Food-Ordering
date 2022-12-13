@@ -19,7 +19,7 @@ const Cart = ({onCloseCart}) => {
   return (
     <Modal onCloseCart={onCloseCart}>
         <ul className={styles['cart-items']}>
-          {cartCtx.items.map((item) => (
+          {cartCtx.items.length === 0 ? <p>Cart is empty.</p>: cartCtx.items.map((item) => (
         <CartItem 
         key={item.id}
         price={item.price} 
